@@ -42,3 +42,11 @@ ambient_temperature 31.00
 temperature 46.00
 ```
 
+## Grafana
+
+If you're graphing this using Grafana, you might want to smoothen out the readings.
+
+I've been using this code to average it over 10 minutes:
+
+`avg_over_time(ambient_temperature{location="ESP32C6-study"}[10m])`
+
